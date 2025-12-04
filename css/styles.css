@@ -428,7 +428,7 @@ a:focus {
 }
 
 /* Mobile Optimizations */
-@media (max-width: 414px) {
+@media (max-width: 768px) {
     .container {
         padding: 0 1rem;
     }
@@ -440,6 +440,7 @@ a:focus {
     .hero {
         padding: 3rem 0;
         overflow: visible;
+        min-height: auto;
     }
 
     .hero-content {
@@ -449,26 +450,30 @@ a:focus {
     }
 
     .hero-image {
-        position: relative;
-        left: auto;
-        top: auto;
-        height: auto;
-        width: 100%;
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        height: auto !important;
+        width: 100% !important;
         display: flex;
         justify-content: center;
+        align-items: center;
     }
 
     .profile-photo {
-        width: 280px;
-        height: auto;
+        width: 280px !important;
+        height: auto !important;
         max-width: 100%;
-        opacity: 1;
-        mask-image: none;
-        -webkit-mask-image: none;
+        opacity: 1 !important;
+        mask-image: none !important;
+        -webkit-mask-image: none !important;
+        position: relative;
+        object-fit: contain;
     }
 
     .hero-text {
-        margin-left: 0;
+        margin-left: 0 !important;
+        width: 100%;
     }
 
     .hero-text h1,
