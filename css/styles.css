@@ -438,12 +438,37 @@ a:focus {
     }
 
     .hero {
-        padding: 4rem 0;
+        padding: 3rem 0;
+        overflow: visible;
     }
 
     .hero-content {
         flex-direction: column;
         text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-image {
+        position: relative;
+        left: auto;
+        top: auto;
+        height: auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .profile-photo {
+        width: 280px;
+        height: auto;
+        max-width: 100%;
+        opacity: 1;
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
+
+    .hero-text {
+        margin-left: 0;
     }
 
     .hero-text h1,
@@ -456,11 +481,6 @@ a:focus {
 
     .hero-intro {
         margin: 0 auto 2rem;
-    }
-
-    .profile-photo {
-        width: 200px;
-        height: 200px;
     }
 
     .gallery-grid {
