@@ -1,0 +1,45 @@
+openapi: 3.0.3
+info:
+  title: MMA Coach Site Contracts (Static)
+  version: 0.1.0
+  description: Static content schema represented as pseudo-API for validation/reference.
+paths: {}
+components:
+  schemas:
+    CoachProfile:
+      type: object
+      properties:
+        name: { type: string }
+        bioSummary: { type: string }
+        experienceHighlights:
+          type: array
+          items: { type: string }
+        achievements:
+          type: array
+          items: { type: string }
+        studentsHighlights:
+          type: array
+          items: { type: string }
+        contactEmail: { type: string, format: email }
+        contactWhatsApp: { type: string }
+        websiteLink: { type: string, format: uri }
+    ClassOffering:
+      type: object
+      properties:
+        title: { type: string }
+        description: { type: string }
+        scheduleText: { type: string }
+        locationAddress: { type: string }
+        gymWebsite: { type: string, format: uri }
+    Pricing:
+      type: object
+      properties:
+        groupMonthlyGBP: { type: number }
+        individualSessionGBP: { type: number }
+        individualSessionDuration: { type: string }
+    GalleryImage:
+      type: object
+      properties:
+        filename: { type: string }
+        altText: { type: string }
+        caption: { type: string }

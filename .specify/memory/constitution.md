@@ -1,50 +1,100 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report
+- Version change: 1.0.0 → 1.1.0
+- Modified principles: III. Performance & Optimization (explicit mobile target)
+- Added sections: None
+- Removed sections: Template placeholder section fully removed
+- Templates requiring updates:
+	✅ .specify/templates/plan-template.md (Constitution Check aligns with static-site gates)
+	✅ .specify/templates/spec-template.md (User scenarios remain applicable)
+	✅ .specify/templates/tasks-template.md (Task grouping remains applicable; tests optional per spec)
+- Follow-up TODOs:
+	- TODO(RATIFICATION_DATE): Original adoption date unknown; set when known
+-->
+
+# Viktor Resume Website Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Static-Only Delivery
+Content MUST be served as a static website. No server-side
+execution, databases, or dynamic backends are permitted. All
+functionality must be achievable via HTML, CSS, and client-side
+JavaScript only.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+Rationale: Eliminates operational complexity, improves reliability,
+and simplifies hosting and maintenance for a personal resume site.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### II. Accessibility (WCAG AA)
+Pages MUST meet WCAG 2.1 AA criteria for key aspects: semantic HTML
+structure, sufficient color contrast, keyboard navigation, meaningful
+alt text for images, and focus management.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+Rationale: Ensures the site is usable by everyone and aligns with
+professional presentation standards.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### III. Performance, Mobile & Optimization
+The site MUST load quickly on typical mobile networks: optimize
+assets (images compressed, fonts subset or system fonts), defer or
+async non-critical scripts, and avoid render-blocking resources.
+Target: First Contentful Paint under 2s on a mid-range device.
+Mobile experience MUST be responsive: include a viewport meta tag,
+use responsive layouts (flex/grid), fluid typography, touch-friendly
+targets (min 44×44px), and breakpoints that ensure readability on
+small screens.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+Rationale: Fast pages improve user experience and search visibility.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### IV. Simplicity & Maintainability
+Design and code MUST remain simple: minimal dependencies, clear
+structure, and small bundle sizes. Avoid frameworks unless they add
+clear value for a static site. Prefer plain HTML/CSS and light
+JavaScript.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+Rationale: Reduces maintenance overhead and makes future updates easy.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### V. Content Accuracy & Versioning
+Content MUST be accurate and up to date. Use semantic versioning for
+content and structure changes: MAJOR for breaking navigation/layout
+restructures, MINOR for new sections or notable additions, PATCH for
+typo or small copy edits.
+
+Rationale: Provides traceability and predictable change management.
+
+## Additional Constraints
+
+- Hosting: Deploy via static hosting (e.g., GitHub Pages, Netlify).
+- Privacy: No invasive trackers; analytics MUST be privacy-preserving
+	(optional) and documented.
+- SEO: Provide `title`, `meta` descriptions, Open Graph tags, and a
+	sitemap if multiple pages.
+- Assets: Images MUST have descriptive filenames; use responsive
+	images (`srcset`) where beneficial.
+- Mobile: Include `<meta name="viewport" content="width=device-width, initial-scale=1">`.
+	Validate layouts on common mobile widths (360–414px) and ensure
+	no horizontal scrolling.
+
+## Development Workflow
+
+- Authoring: Edit content in `index.html`, `assets/`, and `styles/`.
+- Reviews: Changes MUST be reviewed for accessibility, performance,
+	and accuracy before publish.
+- Testing: Manual checks with browser dev tools and Lighthouse are
+	REQUIRED before release; automated tests are OPTIONAL given static
+	scope.
+- Deployment: CI or manual publish to static host; ensure cache
+	invalidation for updated assets.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+- Compliance: All pull requests MUST verify adherence to Core
+	Principles and Constraints.
+- Amendments: Propose changes via PR with rationale and potential
+	migration notes; update version per policy.
+- Versioning Policy: Use semantic versioning for the constitution
+	itself; MAJOR for removals/redefinitions, MINOR for added guidance,
+	PATCH for clarifications.
+- Review Cadence: Perform a quarterly compliance review or upon any
+	significant content update.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.1.0 | **Ratified**: TODO(RATIFICATION_DATE): original adoption date unknown | **Last Amended**: 2025-11-30

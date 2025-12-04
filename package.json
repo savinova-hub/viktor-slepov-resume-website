@@ -1,0 +1,18 @@
+{
+  "name": "viktor_resume_website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "http-server ./src/site -p 8080 -c-1",
+    "lighthouse": "lighthouse http://localhost:8080 --only-categories=performance,accessibility --quiet"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "lighthouse": "^12.8.2"
+  }
+}
